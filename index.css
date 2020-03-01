@@ -1,0 +1,145 @@
+body {
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container {
+  position: relative;
+  width: 660px;
+  border: 1px solid #676767;
+  border-radius: 30px;
+  padding: 20px;
+}
+.cover {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  z-index: 1;
+}
+.cover.active {
+  display: block;
+}
+.cover > span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+.noti {
+  opacity: 0;
+  margin-top: 10px;
+  font-size: 32px;
+  transition: 0.5s ease;
+}
+.noti.active {
+  opacity: 1;
+}
+.controls {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 280px;
+  border: 1px solid #676767;
+  text-align: center;
+  border-radius: 30px;
+}
+.controls > .time {
+  height: 50px;
+  line-height: 50px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 48px;
+  text-align: center;
+  color: #676767;
+}
+.btns {
+  margin: 10px 0;
+}
+.controls .start_btn,
+.controls .stop_btn,
+.controls .reset_btn {
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  color: #676767;
+  background-color: #fff;
+  border: 1px solid #676767;
+}
+.controls .start_btn,
+.controls .stop_btn {
+  width: 100px;
+}
+.controls .reset_btn {
+  width: 200px;
+}
+.controls button:hover {
+  cursor: pointer;
+}
+.start_btn.disabled,
+.stop_btn.disabled,
+.reset_btn.disabled {
+  color: #bfbfbf;
+  border-color: #bfbfbf;
+}
+.start_btn.disabled:hover,
+.stop_btn.disabled:hover,
+.reset_btn.disabled:hover {
+  cursor: not-allowed;
+}
+.card_frame {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 90px;
+  height: 90px;
+  margin: 10px;
+  perspective: 90px;
+}
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+.card.active {
+  transform: rotateY(180deg);
+}
+.card:hover {
+  cursor: pointer;
+}
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  color: #333;
+  border-radius: 20px;
+}
+.card .front {
+  background: #ffc728;
+  text-align: center;
+  line-height: 90px;
+  color: #fff;
+  font-size: 56px;
+}
+.card .back {
+  background: #fafafa;
+  transform: rotateY(180deg);
+}
