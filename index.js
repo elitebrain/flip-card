@@ -24,10 +24,10 @@ const resetCard = () => {
   timeout = null;
 };
 const handleClickCard = e => {
-  if (timeout || status !== "start") {
+  const el = e.target.parentElement;
+  if (timeout || status !== "start" || activeList.indexOf(el.id) !== -1) {
     return;
   }
-  const el = e.target.parentElement;
   if (activeCard.length < 2) {
     if (activeCard[0] === el.id) {
       resetCard();
