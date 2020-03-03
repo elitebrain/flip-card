@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const controls = document.querySelector(".controls");
 const minDiv = document.querySelector(".min");
 const secDiv = document.querySelector(".sec");
 const startBtn = document.querySelector(".start_btn");
@@ -116,6 +117,23 @@ const setDigitNumber = number => {
   }
 };
 
+let oldY = 0;
+let newY = 0;
+const handleDragStart = e => {
+  oldY = e.offsetY;
+};
+const handleDragEnd = e => {
+  newY = e.offsetY;
+  const transform = controls.style.transform;
+  const oldTranslateY = transform
+    ? parseInt(transform.substr(11, transform.length - 14))
+    : 0;
+  if (newY > oldY) {
+    controls.style.transform = `translateY(${oldTranslateY + 282}px)`;
+  } else {
+    controls.style.transform = `translateY(${oldTranslateY - 282}px)`;
+  }
+};
 const init = () => {
   let colors = [
     "#f00",
@@ -166,6 +184,8 @@ const init = () => {
   startBtn.addEventListener("click", handleStart);
   stopBtn.addEventListener("click", handleStop);
   resetBtn.addEventListener("click", resetGame);
+  controls.addEventListener("dragstart", handleDragStart);
+  controls.addEventListener("dragend", handleDragEnd);
 };
 
 init();
