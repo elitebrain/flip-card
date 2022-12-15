@@ -1,0 +1,22 @@
+{
+  "name": "flip-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elitebrain/flip-card.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elitebrain/flip-card/issues"
+  },
+  "homepage": "https://elitebrain.github.io/flip-card",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
