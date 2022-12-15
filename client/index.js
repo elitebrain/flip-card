@@ -4,7 +4,7 @@ const path = require("path");
 const app = express();
 
 app.get("/style.css", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.css"));
+  res.sendFile(path.join(__dirname, "../style.css"));
 });
 app.get("/index.js", (req, res) => {
   res.sendFile(path.join(__dirname, "../index.js"));
